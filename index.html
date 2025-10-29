@@ -29,7 +29,6 @@
   </div>
   <p class="tagline">L’art dans vos travaux, l’or dans vos projets</p>
 </header>
-
 <main class="container page fade-section">
   <section class="hero fade-section">
     <div class="hero-overlay">
@@ -43,11 +42,11 @@
   </section>
 
   <section class="panel fade-section">
-    <h2>Exigence & savoir-faire artisanal</h2>
-    <p>Entreprise tous corps d’état basée à La Seyne-sur-Mer, nous menons vos projets avec précision, finitions d’exception et respect des délais.</p>
+    <h2>Exigence & savoir‑faire artisanal</h2>
+    <p>Entreprise tous corps d’état basée à La Seyne‑sur‑Mer, nous menons vos projets avec précision, finitions d’exception et respect des délais.</p>
   </section>
-</main>
 
+</main>
 <footer class="site-footer fade-section">
   <div class="container footer-grid">
     <div>
@@ -69,5 +68,17 @@
   </div>
   <div class="footer-bottom">© GoldConstruction — Tous droits réservés</div>
 </footer>
+
+<!-- Script adaptatif pour liens relatifs ./ -->
+<script>
+(function() { 
+  const segments = window.location.pathname.split('/').filter(Boolean);
+  const base = segments.length > 0 ? '/' + segments[0] + '/' : '/';
+  document.querySelectorAll('a[href^="./"]').forEach(a => {
+    const target = a.getAttribute('href').replace('./','');
+    a.href = base + target;
+  });
+})();
+</script>
 </body>
 </html>

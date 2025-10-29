@@ -16,15 +16,15 @@
 </div>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Accueil">
+    <a class="brand" href="./index.html" aria-label="Accueil">
       <img src="assets/logo-gc.png" alt="Logo GoldConstruction" class="brand-logo">
     </a>
     <nav class="nav">
-      <a href="index.html">Accueil</a>
-      <a href="a-propos.html">À propos</a>
-      <a href="services.html">Services</a>
-      <a href="realisations.html">Réalisations</a>
-      <a href="contact.html">Contact</a>
+      <a href="./index.html">Accueil</a>
+      <a href="./a-propos.html">À propos</a>
+      <a href="./services.html">Services</a>
+      <a href="./realisations.html">Réalisations</a>
+      <a href="./contact.html">Contact</a>
     </nav>
   </div>
   <p class="tagline">L’art dans vos travaux, l’or dans vos projets</p>
@@ -58,6 +58,7 @@
     </form>
     <p class="small">L’envoi ouvre votre client e‑mail par défaut. Pour un envoi côté serveur, je peux ajouter un script plus tard.</p>
   </section>
+
 </main>
 <footer class="site-footer fade-section">
   <div class="container footer-grid">
@@ -80,5 +81,17 @@
   </div>
   <div class="footer-bottom">© GoldConstruction — Tous droits réservés</div>
 </footer>
+
+<!-- Script adaptatif pour liens relatifs ./ -->
+<script>
+(function() { 
+  const segments = window.location.pathname.split('/').filter(Boolean);
+  const base = segments.length > 0 ? '/' + segments[0] + '/' : '/';
+  document.querySelectorAll('a[href^="./"]').forEach(a => {
+    const target = a.getAttribute('href').replace('./','');
+    a.href = base + target;
+  });
+})();
+</script>
 </body>
 </html>
